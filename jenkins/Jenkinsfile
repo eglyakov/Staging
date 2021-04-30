@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install'
+                sh 'dcoker build -t jenkins-staging .'
+                //sh 'npm install'
             }
         }
         stage('Test') {
