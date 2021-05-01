@@ -1,12 +1,9 @@
 pipeline {
-    agent { 
-        label 'staging' 
-    }
+    agent { dockerfile true }
     stages {
-        stage('creat docker') {
+        stage('end') {
             steps {
-                echo '------------- start building -------------'
-                sh 'docker build ../'
+                echo 'completed'
             }
         }
     }
