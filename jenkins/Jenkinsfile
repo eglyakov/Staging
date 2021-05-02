@@ -1,10 +1,8 @@
 pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('end') {
-            steps {
-                echo 'completed'
-            }
-        }
-    }
+   agent any
+   stage('Create Docker Image') {
+       steps {
+           sh "dcoker build -t jenkins-bulid ../"
+       }
+  }
 }
