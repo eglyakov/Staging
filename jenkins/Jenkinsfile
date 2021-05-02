@@ -1,11 +1,14 @@
 pipeline {
-   agent {
-      dockerfile true
-   }
+   environment {
+        dockerImage = '' 
+    }
+   agent any
    stages {
       stage('images') {
           steps {
-              sh "dcoker images"
+              script { 
+                    dockerImage = docker.build registry + ":$BUILD_NUMBER" 
+                }
           }
      }
    }
