@@ -3,7 +3,7 @@ pipeline {
    stages {
       stage('Create Docker Image') {
           steps {
-              sh "dcoker build -t jenkins-bulid ../"
+              sh "dcoker build -t jenkins-bulid ."
           }
      }
    }
