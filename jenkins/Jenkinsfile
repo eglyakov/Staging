@@ -1,8 +1,10 @@
 pipeline {
    agent any
-   stage('Create Docker Image') {
-       steps {
-           sh "dcoker build -t jenkins-bulid ../"
-       }
-  }
+   stages {
+      stage('Create Docker Image') {
+          steps {
+              sh "dcoker build -t jenkins-bulid ../"
+          }
+     }
+   }
 }
